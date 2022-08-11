@@ -18,18 +18,15 @@ NUM_ENVS = 4
 GAMMA = 0.99
 BATCH_SIZE = 32
 BUFFER_SIZE = 300000
-#MIN_REPLAY_SIZE = 50000
-MIN_REPLAY_SIZE = 32
+MIN_REPLAY_SIZE = 50000
 EPSILON_START = 1.0
 EPSILON_END = 0.1
 EPSILON_DECAY = 300000
 TARGET_UPDATE_FREQ = 10000 // NUM_ENVS
 LR = 2.5e-5
-#SAVE_PATH = './torch_models/space_2.5e-5_cropV2_rew_17.49.pt'
-SAVE_PATH = './delete/delete.pt'
+SAVE_PATH = './torch_models/new.pt'
 SAVE_FREQ = 10000
-#LOG_DIR = './logs/space_2.5e-5_cropV2'
-LOG_DIR = './logs/delete'
+LOG_DIR = './logs/new'
 LOG_FREQ = 1000
 
 def make_cnn(observation_space):
