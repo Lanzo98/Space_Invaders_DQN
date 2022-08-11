@@ -3,10 +3,9 @@ import itertools
 import time
 import numpy as np
 from baselines_wrappers import DummyVecEnv
-from dqn import Network
+from train import Network
 from space_wrappers import make_atari, BatchedFrameStack, LazyFrames
 from matplotlib import pyplot as plt
-from gym.wrappers import RecordVideo
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print('device:', device)
@@ -14,7 +13,6 @@ print('device:', device)
 make_env = lambda: make_atari('ALE/SpaceInvaders-v5', min_y=20, max_y=-15, min_x=4, max_x=-15, crop=True, render_mode='human', scale_values=True, clip_rewards=False)
 
 vec_env = DummyVecEnv([make_env])
-video_recorder = RecordVideo(vec_env, './video/space.mp4')
 
 env = BatchedFrameStack(vec_env, k=4)
 
@@ -35,7 +33,6 @@ episode_count = 0
 for t in itertools.count():
     act_obs = np.stack([o.get_frames() for o in obs])
     action = net.compute_actions(act_obs, 0.0)
-    video_recorder.capture_frame()
 
     obs, rew, done, info = env.step(action)
     episode_reward += rew
