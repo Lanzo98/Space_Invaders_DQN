@@ -1,12 +1,9 @@
-from collections import deque
-
 import gym
 import numpy as np
 
+from collections import deque
+from baselines_wrappers.atari_wrappers import NoopResetEnv, EpisodicLifeEnv, WarpFrame, ScaledFloatFrame, ClipRewardEnv
 from baselines_wrappers import VecEnvWrapper
-from baselines_wrappers.atari_wrappers import NoopResetEnv, MaxAndSkipEnv, EpisodicLifeEnv, ScaledFloatFrame,ClipRewardEnv, WarpFrame
-
-import time
 
 
 def make_atari(env_id, min_y='', max_y='', min_x='', max_x='', crop=False, scale_values=True, clip_rewards=True, render_mode=None):
