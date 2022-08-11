@@ -14,4 +14,6 @@ python dqn.py
 ```
 
 ## Watch the agent play
-![](video/space.mp4)
+
+https://user-images.githubusercontent.com/69208336/184199328-eb92822f-06dc-433e-bb7c-1a39ddc4c25a.mp4
+
