@@ -15,4 +15,6 @@ python dqn.py
 
 ## Watch the agent play
 
+https://user-images.githubusercontent.com/69208336/184204934-0b803d01-3767-4a4c-bb0c-a670fed78e4d.mp4
+
 
