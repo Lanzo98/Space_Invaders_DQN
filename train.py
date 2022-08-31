@@ -186,8 +186,6 @@ if __name__ == '__main__':
     for step in itertools.count():
         epsilon = np.interp(step * NUM_ENVS, [0, EPSILON_DECAY], [EPSILON_START, EPSILON_END])
 
-        random_sample = random.random()
-
         act_observations = np.stack([o.get_frames() for o in observations])
         actions = online_net.compute_actions(act_observations, epsilon)
 
